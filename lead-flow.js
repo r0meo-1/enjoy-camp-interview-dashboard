@@ -1,7 +1,12 @@
 const stage = document.getElementById("lead-stage");
-const steps = Array.from(document.querySelectorAll(".story-step"));
 const replayButton = document.getElementById("replay-demo");
+const prevButton = document.getElementById("prev-step");
+const nextButton = document.getElementById("next-step");
+const stepButtons = Array.from(document.querySelectorAll("[data-step-button]"));
 const stepLabel = document.getElementById("visual-step-label");
+const stepIndex = document.getElementById("step-index");
+const stepTitle = document.getElementById("step-title");
+const stepChips = document.getElementById("step-chips");
 const submitStatus = document.getElementById("submit-status");
 const crmStatus = document.getElementById("crm-status");
 const managerRoute = document.getElementById("manager-route");
@@ -15,6 +20,9 @@ const stepContent = [
   {
     step: 0,
     label: "Шаг 1 из 6",
+    index: "01",
+    title: "Каталог перегружает выбор",
+    chips: ["73+ смен", "много вариантов", "сырой запрос"],
     submit: "Форма ещё не активна",
     crm: "Ожидание вебхука",
     route: "Менеджер ещё не подключён",
@@ -27,6 +35,9 @@ const stepContent = [
   {
     step: 1,
     label: "Шаг 2 из 6",
+    index: "02",
+    title: "Включается умная форма",
+    chips: ["возраст", "интерес", "локация", "смена"],
     submit: "Контекст собирается",
     crm: "Ожидание вебхука",
     route: "Маршрут готовится",
@@ -39,6 +50,9 @@ const stepContent = [
   {
     step: 2,
     label: "Шаг 3 из 6",
+    index: "03",
+    title: "Данные уходят через вебхук",
+    chips: ["без ручного копирования", "один маршрут"],
     submit: "Данные ушли в вебхук",
     crm: "Передача в систему",
     route: "Ручное копирование не нужно",
@@ -51,6 +65,9 @@ const stepContent = [
   {
     step: 3,
     label: "Шаг 4 из 6",
+    index: "04",
+    title: "В amoCRM создаётся лид",
+    chips: ["карточка", "источник", "статус"],
     submit: "Лид создан",
     crm: "Карточка в amoCRM",
     route: "Есть источник и статус",
@@ -63,6 +80,9 @@ const stepContent = [
   {
     step: 4,
     label: "Шаг 5 из 6",
+    index: "05",
+    title: "Появляются теги и маршрутизация",
+    chips: ["сегменты", "автотеги", "назначение"],
     submit: "Теги проставлены",
     crm: "Сегментация готова",
     route: "Назначение по контексту",
@@ -75,6 +95,9 @@ const stepContent = [
   {
     step: 5,
     label: "Шаг 6 из 6",
+    index: "06",
+    title: "Менеджер получает готовый запрос",
+    chips: ["меньше потерь", "быстрее ответ", "чище CRM", "выше шанс брони"],
     submit: "Лид квалифицирован",
     crm: "Лид доставлен без потерь",
     route: "Менеджер получает готовый запрос",
@@ -88,6 +111,15 @@ const stepContent = [
 
 let activeStep = 0;
 
+function renderChips(chips) {
+  stepChips.innerHTML = "";
+  chips.forEach((chip) => {
+    const item = document.createElement("span");
+    item.textContent = chip;
+    stepChips.appendChild(item);
+  });
+}
+
 function renderStep(index) {
   const item = stepContent[index];
   if (!item) {
@@ -97,6 +129,9 @@ function renderStep(index) {
   activeStep = index;
   stage.dataset.step = String(item.step);
   stepLabel.textContent = item.label;
+  stepIndex.textContent = item.index;
+  stepTitle.textContent = item.title;
+  renderChips(item.chips);
   submitStatus.textContent = item.submit;
   crmStatus.textContent = item.crm;
   managerRoute.textContent = item.route;
@@ -105,48 +140,38 @@ function renderStep(index) {
   crmNote.textContent = item.crmNote;
   benefitStatus.textContent = item.benefit;
 
-  steps.forEach((step, stepIndex) => {
-    step.classList.toggle("active", stepIndex === index);
+  stepButtons.forEach((button, buttonIndex) => {
+    button.classList.toggle("active", buttonIndex === index);
   });
 
   routeNodes.forEach((node, nodeIndex) => {
     node.classList.toggle("active", nodeIndex <= item.routeActive);
   });
+
+  prevButton.disabled = index === 0;
+  nextButton.disabled = index === stepContent.length - 1;
 }
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    const visibleEntry = entries
-      .filter((entry) => entry.isIntersecting)
-      .sort((left, right) => right.intersectionRatio - left.intersectionRatio)[0];
+stepButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    renderStep(Number(button.dataset.stepButton));
+  });
+});
 
-    if (!visibleEntry) {
-      return;
-    }
-
-    const nextStep = Number(visibleEntry.target.dataset.step);
-    if (!Number.isNaN(nextStep) && nextStep !== activeStep) {
-      renderStep(nextStep);
-    }
-  },
-  {
-    rootMargin: "-24% 0px -30% 0px",
-    threshold: [0.25, 0.5, 0.75]
+prevButton.addEventListener("click", () => {
+  if (activeStep > 0) {
+    renderStep(activeStep - 1);
   }
-);
+});
 
-steps.forEach((step) => observer.observe(step));
+nextButton.addEventListener("click", () => {
+  if (activeStep < stepContent.length - 1) {
+    renderStep(activeStep + 1);
+  }
+});
 
 replayButton.addEventListener("click", () => {
-  const firstStep = steps[0];
   renderStep(0);
-
-  if (firstStep) {
-    firstStep.scrollIntoView({
-      behavior: "smooth",
-      block: "center"
-    });
-  }
 });
 
 renderStep(0);

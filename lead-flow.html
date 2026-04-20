@@ -26,7 +26,7 @@
 
     <nav class="quick-nav" aria-label="Быстрые переходы">
       <a href="#scene-start">Сцена</a>
-      <a href="#scroll-story">Шаги</a>
+      <a href="#scene-panel">Управление</a>
       <a href="#scene-effect">Эффект</a>
       <a href="index.html">Назад</a>
     </nav>
@@ -38,7 +38,7 @@
             <p class="eyebrow">Интерактивная сцена CRM</p>
             <h1>Как убрать потери между каталогом и CRM</h1>
             <p class="intro-text">
-              При 73+ сменах важна не просто заявка, а качественная квалификация лида до отдела продаж.
+              Здесь не нужно прокручивать сценарий: весь путь переключается кнопками как живая демонстрация процесса.
             </p>
           </div>
 
@@ -51,212 +51,171 @@
         </div>
       </section>
 
-      <section class="story-section" id="scroll-story">
-        <div class="section-frame story-layout scene-layout">
-          <div class="story-copy scene-copy">
-            <article class="story-step active" data-step="0">
-              <span class="story-index">01</span>
-              <h2>Каталог перегружает выбор</h2>
-              <div class="step-chips">
+      <section class="story-section" id="scene-panel">
+        <div class="section-frame control-layout">
+          <section class="control-panel">
+            <div class="panel-head">
+              <p class="eyebrow">Управление сценой</p>
+              <span class="scene-caption" id="visual-step-label">Шаг 1 из 6</span>
+            </div>
+
+            <div class="step-switcher">
+              <button class="step-button active" type="button" data-step-button="0">1. Каталог</button>
+              <button class="step-button" type="button" data-step-button="1">2. Умная форма</button>
+              <button class="step-button" type="button" data-step-button="2">3. Вебхук</button>
+              <button class="step-button" type="button" data-step-button="3">4. amoCRM</button>
+              <button class="step-button" type="button" data-step-button="4">5. Теги</button>
+              <button class="step-button" type="button" data-step-button="5">6. Менеджер</button>
+            </div>
+
+            <article class="step-card" id="scene-effect">
+              <span class="story-index" id="step-index">01</span>
+              <h2 id="step-title">Каталог перегружает выбор</h2>
+              <div class="step-chips" id="step-chips">
                 <span>73+ смен</span>
                 <span>много вариантов</span>
                 <span>сырой запрос</span>
               </div>
             </article>
 
-            <article class="story-step" data-step="1">
-              <span class="story-index">02</span>
-              <h2>Включается умная форма</h2>
-              <div class="step-chips">
-                <span>возраст</span>
-                <span>интерес</span>
-                <span>локация</span>
-                <span>смена</span>
-              </div>
-            </article>
+            <div class="scene-controls">
+              <button class="button button-secondary" id="prev-step" type="button">Назад</button>
+              <button class="button button-primary" id="next-step" type="button">Дальше</button>
+              <button class="button button-secondary" id="replay-demo" type="button">Сначала</button>
+            </div>
+          </section>
 
-            <article class="story-step" data-step="2">
-              <span class="story-index">03</span>
-              <h2>Данные уходят через вебхук</h2>
-              <div class="step-chips">
-                <span>без ручного копирования</span>
-                <span>один маршрут</span>
-              </div>
-            </article>
-
-            <article class="story-step" data-step="3">
-              <span class="story-index">04</span>
-              <h2>В amoCRM создаётся лид</h2>
-              <div class="step-chips">
-                <span>карточка</span>
-                <span>источник</span>
-                <span>статус</span>
-              </div>
-            </article>
-
-            <article class="story-step" data-step="4">
-              <span class="story-index">05</span>
-              <h2>Появляются теги и маршрутизация</h2>
-              <div class="step-chips">
-                <span>сегменты</span>
-                <span>автотеги</span>
-                <span>назначение</span>
-              </div>
-            </article>
-
-            <article class="story-step" data-step="5" id="scene-effect">
-              <span class="story-index">06</span>
-              <h2>Менеджер получает готовый запрос</h2>
-              <div class="impact-list">
-                <span>меньше потерь</span>
-                <span>быстрее ответ</span>
-                <span>чище CRM</span>
-                <span>выше шанс брони</span>
-              </div>
-            </article>
-          </div>
-
-          <aside class="story-visual">
-            <div class="visual-sticky visual-sticky-scene">
-              <div class="visual-head">
-                <div>
-                  <p class="eyebrow">Живая UI-сцена</p>
-                  <span class="scene-caption" id="visual-step-label">Шаг 1 из 6</span>
+          <section class="scene-stage-shell">
+            <div class="visual-stage visual-stage-scene" id="lead-stage" data-step="0">
+              <div class="scene-lane lane-catalog">
+                <div class="lane-head">
+                  <span class="column-label column-label-danger">Каталог</span>
+                  <span class="lane-status" id="catalog-note">Шумный вход</span>
                 </div>
-                <button class="replay-button" id="replay-demo" type="button">С начала</button>
+                <article class="catalog-card interface-card">
+                  <div class="catalog-header">
+                    <strong>Каталог смен</strong>
+                    <span>73+ активных дат</span>
+                  </div>
+                  <div class="catalog-filters">
+                    <button class="filter-chip" data-filter="age" type="button">6-17 лет</button>
+                    <button class="filter-chip" data-filter="interest" type="button">Робототехника</button>
+                    <button class="filter-chip" data-filter="location" type="button">Сочи</button>
+                  </div>
+                  <div class="catalog-grid">
+                    <span>Английский</span>
+                    <span>Танцы</span>
+                    <span>Блогинг</span>
+                    <span>Робототехника</span>
+                    <span>Бизнес</span>
+                    <span>Кино</span>
+                    <span>Спорт</span>
+                    <span>Творчество</span>
+                  </div>
+                  <div class="problem-stack">
+                    <span>перегруз выбора</span>
+                    <span>хаотичный путь</span>
+                  </div>
+                </article>
               </div>
 
-              <div class="visual-stage visual-stage-scene" id="lead-stage" data-step="0">
-                <div class="scene-lane lane-catalog">
-                  <div class="lane-head">
-                    <span class="column-label column-label-danger">Каталог</span>
-                    <span class="lane-status" id="catalog-note">Шумный вход</span>
-                  </div>
-                  <article class="catalog-card interface-card">
-                    <div class="catalog-header">
-                      <strong>Каталог смен</strong>
-                      <span>73+ активных дат</span>
-                    </div>
-                    <div class="catalog-filters">
-                      <button class="filter-chip" data-filter="age" type="button">6-17 лет</button>
-                      <button class="filter-chip" data-filter="interest" type="button">Робототехника</button>
-                      <button class="filter-chip" data-filter="location" type="button">Сочи</button>
-                    </div>
-                    <div class="catalog-grid">
-                      <span>Английский</span>
-                      <span>Танцы</span>
-                      <span>Блогинг</span>
-                      <span>Робототехника</span>
-                      <span>Бизнес</span>
-                      <span>Кино</span>
-                      <span>Спорт</span>
-                      <span>Творчество</span>
-                    </div>
-                    <div class="problem-stack">
-                      <span>перегруз выбора</span>
-                      <span>хаотичный путь</span>
-                    </div>
-                  </article>
+              <div class="scene-core">
+                <div class="signal-rails" aria-hidden="true">
+                  <svg viewBox="0 0 620 360" class="signal-svg">
+                    <path d="M 36 92 C 140 92, 180 92, 272 180" />
+                    <path d="M 348 180 C 438 180, 474 180, 584 92" />
+                  </svg>
+                  <span class="signal-dot dot-left"></span>
+                  <span class="signal-dot dot-right"></span>
                 </div>
 
-                <div class="scene-core">
-                  <div class="signal-rails" aria-hidden="true">
-                    <svg viewBox="0 0 620 360" class="signal-svg">
-                      <path d="M 36 92 C 140 92, 180 92, 272 180" />
-                      <path d="M 348 180 C 438 180, 474 180, 584 92" />
-                    </svg>
-                    <span class="signal-dot dot-left"></span>
-                    <span class="signal-dot dot-right"></span>
+                <article class="quiz-card interface-card">
+                  <div class="quiz-header">
+                    <span class="column-label column-label-focus">Умная форма</span>
+                    <span class="lane-status" id="quiz-note">Ждёт ввода</span>
                   </div>
-
-                  <article class="quiz-card interface-card">
-                    <div class="quiz-header">
-                      <span class="column-label column-label-focus">Умная форма</span>
-                      <span class="lane-status" id="quiz-note">Ждёт ввода</span>
+                  <div class="quiz-fields">
+                    <div class="quiz-field" data-field="age">
+                      <span>Возраст</span>
+                      <strong>12 лет</strong>
                     </div>
-                    <div class="quiz-fields">
-                      <div class="quiz-field" data-field="age">
-                        <span>Возраст</span>
-                        <strong>12 лет</strong>
-                      </div>
-                      <div class="quiz-field" data-field="interest">
-                        <span>Интерес</span>
-                        <strong>Робототехника</strong>
-                      </div>
-                      <div class="quiz-field" data-field="location">
-                        <span>Локация</span>
-                        <strong>Сочи</strong>
-                      </div>
-                      <div class="quiz-field" data-field="dates">
-                        <span>Смена</span>
-                        <strong>Июль / 14 дней</strong>
-                      </div>
+                    <div class="quiz-field" data-field="interest">
+                      <span>Интерес</span>
+                      <strong>Робототехника</strong>
                     </div>
-                    <div class="quiz-submit">
-                      <span class="submit-status" id="submit-status">Ожидается заполнение</span>
-                      <div class="submit-button">Передать в вебхук</div>
+                    <div class="quiz-field" data-field="location">
+                      <span>Локация</span>
+                      <strong>Сочи</strong>
                     </div>
-                  </article>
-
-                  <div class="route-strip route-strip-core" aria-hidden="true">
-                    <span class="route-node active">Каталог</span>
-                    <span class="route-node">Квиз</span>
-                    <span class="route-node">Вебхук</span>
-                    <span class="route-node">amoCRM</span>
-                    <span class="route-node">Теги</span>
-                    <span class="route-node">Менеджер</span>
+                    <div class="quiz-field" data-field="dates">
+                      <span>Смена</span>
+                      <strong>Июль / 14 дней</strong>
+                    </div>
                   </div>
+                  <div class="quiz-submit">
+                    <span class="submit-status" id="submit-status">Ожидается заполнение</span>
+                    <div class="submit-button">Передать в вебхук</div>
+                  </div>
+                </article>
 
-                  <article class="business-strip business-strip-live">
-                    <div class="business-header">
-                      <strong>Бизнес-эффект</strong>
-                      <span id="benefit-status">Раскрывается по шагам</span>
-                    </div>
-                    <div class="business-chips">
-                      <span>меньше потерь</span>
-                      <span>быстрее реакция</span>
-                      <span>чище CRM</span>
-                      <span>выше конверсия</span>
-                    </div>
-                  </article>
+                <div class="route-strip route-strip-core" aria-hidden="true">
+                  <span class="route-node active">Каталог</span>
+                  <span class="route-node">Квиз</span>
+                  <span class="route-node">Вебхук</span>
+                  <span class="route-node">amoCRM</span>
+                  <span class="route-node">Теги</span>
+                  <span class="route-node">Менеджер</span>
                 </div>
 
-                <div class="scene-lane lane-crm">
-                  <div class="lane-head">
-                    <span class="column-label column-label-success">amoCRM</span>
-                    <span class="lane-status" id="crm-note">Карточки ещё нет</span>
+                <article class="business-strip business-strip-live">
+                  <div class="business-header">
+                    <strong>Бизнес-эффект</strong>
+                    <span id="benefit-status">Эффект ещё не раскрыт</span>
                   </div>
-                  <article class="crm-card interface-card">
-                    <div class="crm-header">
+                  <div class="business-chips">
+                    <span>меньше потерь</span>
+                    <span>быстрее реакция</span>
+                    <span>чище CRM</span>
+                    <span>выше конверсия</span>
+                  </div>
+                </article>
+              </div>
+
+              <div class="scene-lane lane-crm">
+                <div class="lane-head">
+                  <span class="column-label column-label-success">amoCRM</span>
+                  <span class="lane-status" id="crm-note">Карточки ещё нет</span>
+                </div>
+                <article class="crm-card interface-card">
+                  <div class="crm-header">
+                    <strong>Новый лид</strong>
+                    <span id="crm-status">Ожидание вебхука</span>
+                  </div>
+                  <div class="lead-card" id="lead-card">
+                    <div class="lead-line">
+                      <span>Статус</span>
                       <strong>Новый лид</strong>
-                      <span id="crm-status">Ожидание вебхука</span>
                     </div>
-                    <div class="lead-card" id="lead-card">
-                      <div class="lead-line">
-                        <span>Статус</span>
-                        <strong>Новый лид</strong>
-                      </div>
-                      <div class="lead-tags">
-                        <span>12 лет</span>
-                        <span>робототехника</span>
-                        <span>Сочи</span>
-                        <span>источник: каталог</span>
-                        <span>квалифицирован</span>
-                      </div>
-                      <div class="lead-route">
-                        <span>Маршрут</span>
-                        <strong id="manager-route">Назначается профильному менеджеру</strong>
-                      </div>
+                    <div class="lead-tags">
+                      <span>12 лет</span>
+                      <span>робототехника</span>
+                      <span>Сочи</span>
+                      <span>источник: каталог</span>
+                      <span>квалифицирован</span>
                     </div>
-                    <div class="manager-card" id="manager-card">
-                      <span>Менеджер получает готовый запрос</span>
-                      <strong>“12 лет, робототехника, Сочи, нужная смена найдена”</strong>
+                    <div class="lead-route">
+                      <span>Маршрут</span>
+                      <strong id="manager-route">Назначается профильному менеджеру</strong>
                     </div>
-                  </article>
-                </div>
+                  </div>
+                  <div class="manager-card" id="manager-card">
+                    <span>Менеджер получает готовый запрос</span>
+                    <strong>“12 лет, робототехника, Сочи, нужная смена найдена”</strong>
+                  </div>
+                </article>
               </div>
             </div>
-          </aside>
+          </section>
         </div>
       </section>
     </main>
