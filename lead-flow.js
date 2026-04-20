@@ -112,6 +112,9 @@ const stepContent = [
 let activeStep = 0;
 
 function renderChips(chips) {
+  if (!stepChips) {
+    return;
+  }
   stepChips.innerHTML = "";
   chips.forEach((chip) => {
     const item = document.createElement("span");
@@ -122,23 +125,23 @@ function renderChips(chips) {
 
 function renderStep(index) {
   const item = stepContent[index];
-  if (!item) {
+  if (!item || !stage) {
     return;
   }
 
   activeStep = index;
   stage.dataset.step = String(item.step);
-  stepLabel.textContent = item.label;
-  stepIndex.textContent = item.index;
-  stepTitle.textContent = item.title;
+  if (stepLabel) stepLabel.textContent = item.label;
+  if (stepIndex) stepIndex.textContent = item.index;
+  if (stepTitle) stepTitle.textContent = item.title;
   renderChips(item.chips);
-  submitStatus.textContent = item.submit;
-  crmStatus.textContent = item.crm;
-  managerRoute.textContent = item.route;
-  catalogNote.textContent = item.catalog;
-  quizNote.textContent = item.quiz;
-  crmNote.textContent = item.crmNote;
-  benefitStatus.textContent = item.benefit;
+  if (submitStatus) submitStatus.textContent = item.submit;
+  if (crmStatus) crmStatus.textContent = item.crm;
+  if (managerRoute) managerRoute.textContent = item.route;
+  if (catalogNote) catalogNote.textContent = item.catalog;
+  if (quizNote) quizNote.textContent = item.quiz;
+  if (crmNote) crmNote.textContent = item.crmNote;
+  if (benefitStatus) benefitStatus.textContent = item.benefit;
 
   stepButtons.forEach((button, buttonIndex) => {
     button.classList.toggle("active", buttonIndex === index);
@@ -148,8 +151,8 @@ function renderStep(index) {
     node.classList.toggle("active", nodeIndex <= item.routeActive);
   });
 
-  prevButton.disabled = index === 0;
-  nextButton.disabled = index === stepContent.length - 1;
+  if (prevButton) prevButton.disabled = index === 0;
+  if (nextButton) nextButton.disabled = index === stepContent.length - 1;
 }
 
 stepButtons.forEach((button) => {
@@ -158,20 +161,28 @@ stepButtons.forEach((button) => {
   });
 });
 
-prevButton.addEventListener("click", () => {
-  if (activeStep > 0) {
-    renderStep(activeStep - 1);
-  }
-});
+if (prevButton) {
+  prevButton.addEventListener("click", () => {
+    if (activeStep > 0) {
+      renderStep(activeStep - 1);
+    }
+  });
+}
 
-nextButton.addEventListener("click", () => {
-  if (activeStep < stepContent.length - 1) {
-    renderStep(activeStep + 1);
-  }
-});
+if (nextButton) {
+  nextButton.addEventListener("click", () => {
+    if (activeStep < stepContent.length - 1) {
+      renderStep(activeStep + 1);
+    }
+  });
+}
 
-replayButton.addEventListener("click", () => {
+if (replayButton) {
+  replayButton.addEventListener("click", () => {
+    renderStep(0);
+  });
+}
+
+if (stage) {
   renderStep(0);
-});
-
-renderStep(0);
+}

@@ -120,7 +120,6 @@ p { margin: 0; color: var(--muted-strong); }
 }
 
 .hero-shell,
-.control-panel,
 .scene-stage-shell {
   border: 1px solid var(--line);
   background: linear-gradient(180deg, rgba(16, 27, 32, 0.9), rgba(9, 17, 21, 0.86));
@@ -168,21 +167,26 @@ p { margin: 0; color: var(--muted-strong); }
 .story-section {
   margin-top: 18px;
 }
-.control-layout {
-  display: grid;
-  grid-template-columns: 320px minmax(0, 1fr);
-  gap: 18px;
-  align-items: start;
-}
-.control-panel,
 .scene-stage-shell {
   padding: 18px;
 }
+.scene-stage-shell-full {
+  display: grid;
+  gap: 18px;
+}
+.scene-toolbar {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
 .panel-head {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   gap: 10px;
-  margin-bottom: 14px;
 }
 .scene-caption {
   display: inline-flex;
@@ -198,23 +202,23 @@ p { margin: 0; color: var(--muted-strong); }
 }
 
 .step-switcher {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   gap: 8px;
 }
 .step-button {
-  width: 100%;
-  text-align: left;
-  padding: 13px 14px;
-  border-radius: 14px;
-  border: 1px solid transparent;
-  background: rgba(255, 255, 255, 0.02);
+  min-height: 38px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.03);
   color: var(--muted-strong);
   cursor: pointer;
   transition: background var(--transition), border-color var(--transition), transform var(--transition);
 }
 .step-button:hover,
 .step-button.active {
-  transform: translateX(3px);
+  transform: translateY(-2px);
   background: rgba(111, 195, 188, 0.08);
   border-color: rgba(111, 195, 188, 0.2);
   color: var(--text);
@@ -278,7 +282,6 @@ p { margin: 0; color: var(--muted-strong); }
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
-  margin-top: 16px;
 }
 
 .button {
@@ -292,6 +295,11 @@ p { margin: 0; color: var(--muted-strong); }
   cursor: pointer;
 }
 .button:hover { transform: translateY(-2px); }
+.button:disabled {
+  opacity: 0.45;
+  cursor: default;
+  transform: none;
+}
 .button-primary {
   background: linear-gradient(135deg, rgba(111, 195, 188, 0.95), rgba(97, 161, 156, 0.95));
   color: #061013;
@@ -612,7 +620,6 @@ p { margin: 0; color: var(--muted-strong); }
 
 @media (max-width: 1180px) {
   .hero-shell-compact,
-  .control-layout,
   .visual-stage-scene {
     grid-template-columns: 1fr;
   }
@@ -634,12 +641,16 @@ p { margin: 0; color: var(--muted-strong); }
     padding-inline: 14px;
   }
   .hero-shell-compact,
-  .control-panel,
-  .scene-stage-shell {
+  .scene-stage-shell,
+  .scene-toolbar {
     padding: 16px;
   }
   .hero-facts-inline {
     grid-template-columns: 1fr;
+  }
+  .panel-head {
+    flex-direction: column;
+    align-items: start;
   }
   .scene-controls {
     grid-template-columns: 1fr;
