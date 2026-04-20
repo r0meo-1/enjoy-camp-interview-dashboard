@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Карта решений | Как я бы усилил Enjoy Camp</title>
+  <meta
+    name="description"
+    content="Визуальная карта болей и решений для Enjoy Camp: лиды, поддержка, CRM, оплаты и повторные продажи в формате компактных сцен."
+  >
+  <meta name="theme-color" content="#0b1317">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="pain-map.css">
+</head>
+<body>
+  <div class="page-shell">
+    <div class="ambient ambient-a" aria-hidden="true"></div>
+    <div class="ambient ambient-b" aria-hidden="true"></div>
+    <div class="grid-overlay" aria-hidden="true"></div>
+
+    <nav class="quick-nav" aria-label="Быстрые переходы">
+      <a href="#hero">Обзор</a>
+      <a href="#zones">Зоны</a>
+      <a href="#scenes">Сцены</a>
+      <a href="#journey">Путь</a>
+      <a href="index.html">Назад</a>
+    </nav>
+
+    <main>
+      <section id="hero" class="section hero-section">
+        <div class="section-frame hero-shell">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">Карта решений</p>
+            <h1>Где у Enjoy Camp возникает трение и как я превращаю его в управляемый процесс.</h1>
+            <p class="hero-text">
+              Ниже не критика и не длинная аналитика, а наглядная карта: где ломается путь клиента,
+              что я внедряю и какой это даёт эффект бизнесу.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#scenes">Открыть мини-сцены</a>
+            </div>
+          </div>
+
+          <div class="hero-metrics reveal">
+            <article class="metric-card">
+              <strong>73+</strong>
+              <span>активные смены и даты</span>
+            </article>
+            <article class="metric-card">
+              <strong>6-17</strong>
+              <span>возрастной диапазон</span>
+            </article>
+            <article class="metric-card">
+              <strong>7 из 10</strong>
+              <span>возвращаются снова</span>
+            </article>
+            <article class="metric-card">
+              <strong>4.8/5</strong>
+              <span>на основе 2757+ отзывов</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="zones" class="section">
+        <div class="section-frame section-head reveal">
+          <p class="eyebrow">4 системные зоны</p>
+          <h2>Каждая зона показывает не описание, а логику: боль → сбой → решение → эффект.</h2>
+        </div>
+
+        <div class="zones-grid section-frame">
+          <article class="zone-panel reveal zone-conversion">
+            <div class="zone-top">
+              <div>
+                <p class="zone-kicker">Зона 1</p>
+                <h3>Лиды и конверсия</h3>
+              </div>
+              <span class="zone-badge">каталог → CRM</span>
+            </div>
+            <div class="zone-signal-grid">
+              <div class="signal-card">
+                <span>Боль</span>
+                <strong>слишком шумный вход</strong>
+              </div>
+              <div class="signal-card">
+                <span>Ломается</span>
+                <strong>форма и бронь без контекста</strong>
+              </div>
+              <div class="signal-card">
+                <span>Внедряю</span>
+                <strong>квиз, теги, маршрутизацию</strong>
+              </div>
+              <div class="signal-card">
+                <span>Эффект</span>
+                <strong>меньше потерь лидов</strong>
+              </div>
+            </div>
+            <div class="zone-line">
+              <span>Каталог</span>
+              <span>Форма</span>
+              <span>Вебхук</span>
+              <span>amoCRM</span>
+              <span>Менеджер</span>
+            </div>
+          </article>
+
+          <article class="zone-panel reveal zone-support">
+            <div class="zone-top">
+              <div>
+                <p class="zone-kicker">Зона 2</p>
+                <h3>Поддержка и коммуникация</h3>
+              </div>
+              <span class="zone-badge">вопросы → SLA</span>
+            </div>
+            <div class="zone-signal-grid">
+              <div class="signal-card">
+                <span>Боль</span>
+                <strong>повторяющиеся вопросы</strong>
+              </div>
+              <div class="signal-card">
+                <span>Ломается</span>
+                <strong>первая линия перегружается</strong>
+              </div>
+              <div class="signal-card">
+                <span>Внедряю</span>
+                <strong>база знаний и эскалации</strong>
+              </div>
+              <div class="signal-card">
+                <span>Эффект</span>
+                <strong>быстрее и ровнее ответы</strong>
+              </div>
+            </div>
+            <div class="zone-chips">
+              <span>справки</span>
+              <span>безопасность</span>
+              <span>связь с ребёнком</span>
+              <span>бонусы</span>
+            </div>
+          </article>
+
+          <article class="zone-panel reveal zone-ops">
+            <div class="zone-top">
+              <div>
+                <p class="zone-kicker">Зона 3</p>
+                <h3>Операции и интеграции</h3>
+              </div>
+              <span class="zone-badge">формы → оплата</span>
+            </div>
+            <div class="zone-signal-grid">
+              <div class="signal-card">
+                <span>Боль</span>
+                <strong>слишком много точек передачи</strong>
+              </div>
+              <div class="signal-card">
+                <span>Ломается</span>
+                <strong>статусы, вебхуки, оплаты</strong>
+              </div>
+              <div class="signal-card">
+                <span>Внедряю</span>
+                <strong>мониторинг, тикеты, SLA</strong>
+              </div>
+              <div class="signal-card">
+                <span>Эффект</span>
+                <strong>быстрее диагностика сбоев</strong>
+              </div>
+            </div>
+            <div class="ops-mini-board">
+              <span class="ops-dot alert">3 сбоя</span>
+              <span class="ops-dot">14 просрочек</span>
+              <span class="ops-dot success">оплаты под контролем</span>
+            </div>
+          </article>
+
+          <article class="zone-panel reveal zone-retention">
+            <div class="zone-top">
+              <div>
+                <p class="zone-kicker">Зона 4</p>
+                <h3>Удержание и повторные продажи</h3>
+              </div>
+              <span class="zone-badge">минутки → повторная продажа</span>
+            </div>
+            <div class="zone-signal-grid">
+              <div class="signal-card">
+                <span>Боль</span>
+                <strong>возврат есть, но не управляется</strong>
+              </div>
+              <div class="signal-card">
+                <span>Ломается</span>
+                <strong>слишком общие повторные касания</strong>
+              </div>
+              <div class="signal-card">
+                <span>Внедряю</span>
+                <strong>сегменты и триггеры после смены</strong>
+              </div>
+              <div class="signal-card">
+                <span>Эффект</span>
+                <strong>выше LTV и точность прогрева</strong>
+              </div>
+            </div>
+            <div class="zone-line retention-line">
+              <span>Заезд</span>
+              <span>Минутки</span>
+              <span>Сегмент</span>
+              <span>Сообщение</span>
+              <span>Повторная бронь</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="scenes" class="section">
+        <div class="section-frame section-head reveal">
+          <p class="eyebrow">5 мини-сцен</p>
+          <h2>Здесь pain-to-solution логика показана как интерфейсы, статусы и реальные маршруты.</h2>
+        </div>
+
+        <div class="scene-shell section-frame">
+          <div class="scene-tabs reveal">
+            <button class="scene-tab active" type="button" data-scene="lead">Путь лида</button>
+            <button class="scene-tab" type="button" data-scene="chat">Вопросы / чат</button>
+            <button class="scene-tab" type="button" data-scene="booking">Бронь / оплата</button>
+            <button class="scene-tab" type="button" data-scene="center">Центр управления</button>
+            <button class="scene-tab" type="button" data-scene="retention">Повторная продажа</button>
+          </div>
+
+          <div class="scene-stage reveal">
+            <article class="scene-panel active" data-scene-panel="lead">
+              <div class="scene-head">
+                <div>
+                  <p class="scene-kicker">Сцена 1</p>
+                  <h3>Поток квалификации лида</h3>
+                </div>
+                <div class="scene-tags">
+                  <span>12 лет</span>
+                  <span>робототехника</span>
+                  <span>Сочи</span>
+                </div>
+              </div>
+
+              <div class="pipeline-mockup">
+                <div class="pipeline-column">
+                  <span class="mock-label danger">До</span>
+                  <div class="mock-box">
+                    <strong>Каталог</strong>
+                    <div class="chip-row">
+                      <span>73+ смен</span>
+                      <span>Английский</span>
+                      <span>Робототехника</span>
+                      <span>Сочи</span>
+                    </div>
+                    <div class="mock-note">слишком много вариантов</div>
+                  </div>
+                </div>
+
+                <div class="pipeline-center">
+                  <div class="pipeline-node active">Квиз</div>
+                  <div class="pipeline-node">Вебхук</div>
+                  <div class="pipeline-node">Теги</div>
+                  <div class="pipeline-node">Менеджер</div>
+                </div>
+
+                <div class="pipeline-column">
+                  <span class="mock-label success">После</span>
+                  <div class="mock-box crm-box">
+                    <strong>amoCRM</strong>
+                    <div class="chip-row">
+                      <span>12 лет</span>
+                      <span>робототехника</span>
+                      <span>Сочи</span>
+                      <span>квалифицирован</span>
+                    </div>
+                    <div class="mock-note success-note">лид доставлен без потерь</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="result-strip">
+                <span>меньше ручной квалификации</span>
+                <span>быстрее первый отклик</span>
+                <span>чище CRM</span>
+              </div>
+            </article>
+
+            <article class="scene-panel" data-scene-panel="chat">
+              <div class="scene-head">
+                <div>
+                  <p class="scene-kicker">Сцена 2</p>
+                  <h3>Консоль поддержки для родителей</h3>
+                </div>
+                <div class="scene-tags">
+                  <span>вопросы</span>
+                  <span>эскалация</span>
+                  <span>CRM</span>
+                </div>
+              </div>
+
+              <div class="support-console">
+                <div class="faq-stack">
+                  <button class="faq-item active" type="button" data-faq="certificates">Какие справки нужны?</button>
+                  <button class="faq-item" type="button" data-faq="contact">Как связаться с ребёнком?</button>
+                  <button class="faq-item" type="button" data-faq="phones">Забираете ли вы телефоны?</button>
+                  <button class="faq-item" type="button" data-faq="program">Можно ли сменить программу?</button>
+                </div>
+                <div class="console-window">
+                  <div class="console-top">
+                    <strong>Поддержка родителей</strong>
+                    <span id="chat-route">Решено автоматически</span>
+                  </div>
+                  <div class="console-chat">
+                    <div class="message question" id="chat-question">Какие справки нужны?</div>
+                    <div class="message answer" id="chat-answer">Родитель получает список документов и сроков сразу после бронирования.</div>
+                  </div>
+                  <div class="console-route">
+                    <span class="route-pill">база знаний</span>
+                    <span class="route-pill" id="chat-status-chip">без менеджера</span>
+                    <span class="route-pill neutral">единый стандарт ответа</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="scene-panel" data-scene-panel="booking">
+              <div class="scene-head">
+                <div>
+                  <p class="scene-kicker">Сцена 3</p>
+                  <h3>Лента статусов брони и оплаты</h3>
+                </div>
+                <div class="scene-tags">
+                  <span>таймеры</span>
+                  <span>статусы</span>
+                  <span>напоминания</span>
+                </div>
+              </div>
+
+              <div class="status-timeline">
+                <div class="timeline-card done">
+                  <strong>Заявка</strong>
+                  <span>получена</span>
+                </div>
+                <div class="timeline-card done">
+                  <strong>Бронь</strong>
+                  <span>создана</span>
+                </div>
+                <div class="timeline-card waiting">
+                  <strong>Оплата</strong>
+                  <span>ожидается</span>
+                </div>
+                <div class="timeline-card alert">
+                  <strong>Триггер</strong>
+                  <span>напоминание</span>
+                </div>
+                <div class="timeline-card live">
+                  <strong>Менеджер</strong>
+                  <span>подключён</span>
+                </div>
+                <div class="timeline-card success">
+                  <strong>Бронь</strong>
+                  <span>восстановлена</span>
+                </div>
+              </div>
+
+              <div class="booking-board">
+                <div class="booking-stat">
+                  <span>Статус</span>
+                  <strong>Ожидается оплата</strong>
+                </div>
+                <div class="booking-stat">
+                  <span>Канал</span>
+                  <strong>Telegram + задача</strong>
+                </div>
+                <div class="booking-stat">
+                  <span>Эффект</span>
+                  <strong>возврат потерянной выручки</strong>
+                </div>
+              </div>
+            </article>
+
+            <article class="scene-panel" data-scene-panel="center">
+              <div class="scene-head">
+                <div>
+                  <p class="scene-kicker">Сцена 4</p>
+                  <h3>Мини-дашборд операционного центра</h3>
+                </div>
+                <div class="scene-tags">
+                  <span>SLA</span>
+                  <span>интеграции</span>
+                  <span>сигналы</span>
+                </div>
+              </div>
+
+              <div class="dashboard-grid">
+                <article class="dash-card">
+                  <span>Новые лиды</span>
+                  <strong>128</strong>
+                  <em></em>
+                </article>
+                <article class="dash-card alert">
+                  <span>Просроченные касания</span>
+                  <strong>14</strong>
+                  <em></em>
+                </article>
+                <article class="dash-card danger">
+                  <span>Сбои интеграций</span>
+                  <strong>3</strong>
+                  <em></em>
+                </article>
+                <article class="dash-card">
+                  <span>Незавершённые оплаты</span>
+                  <strong>17</strong>
+                  <em></em>
+                </article>
+                <article class="dash-card">
+                  <span>Нагрузка вопросов</span>
+                  <strong>41%</strong>
+                  <em></em>
+                </article>
+                <article class="dash-card success">
+                  <span>Повторная продажа</span>
+                  <strong>36</strong>
+                  <em></em>
+                </article>
+              </div>
+
+              <div class="attention-bar">
+                <span>Нужно внимание</span>
+                <p>3 сбоя по вебхуку оплаты, 14 просроченных касаний, пик вопросов по справкам, 17 незавершённых оплат.</p>
+              </div>
+            </article>
+
+            <article class="scene-panel" data-scene-panel="retention">
+              <div class="scene-head">
+                <div>
+                  <p class="scene-kicker">Сцена 5</p>
+                  <h3>Автосценарий повторной продажи</h3>
+                </div>
+                <div class="scene-tags">
+                  <span>минутки</span>
+                  <span>сегменты</span>
+                  <span>триггеры</span>
+                </div>
+              </div>
+
+              <div class="automation-map">
+                <div class="auto-node">Смена завершена</div>
+                <div class="auto-node">Начислены минутки</div>
+                <div class="auto-node focus">Сегмент по возрасту и интересу</div>
+                <div class="auto-node">Персональное сообщение</div>
+                <div class="auto-node success">Повторная бронь</div>
+              </div>
+
+              <div class="segment-row">
+                <span>12 лет</span>
+                <span>робототехника</span>
+                <span>Сочи</span>
+                <span>500 минуток</span>
+                <span>рекомендация: бизнес-смена</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="journey" class="section">
+        <div class="section-frame section-head reveal">
+          <p class="eyebrow">Единый путь клиента</p>
+          <h2>Здесь путь показан как один маршрут с зонами трения, ручной нагрузки, интеграционных рисков и роста возврата.</h2>
+        </div>
+
+        <div class="journey-shell section-frame reveal">
+          <div class="journey-line" id="journey-line">
+            <article class="journey-stop risk-conversion" data-stop>
+              <strong>Трафик</strong>
+              <span>шумный вход</span>
+            </article>
+            <article class="journey-stop risk-conversion" data-stop>
+              <strong>Каталог</strong>
+              <span>сложный выбор</span>
+            </article>
+            <article class="journey-stop risk-conversion" data-stop>
+              <strong>Форма</strong>
+              <span>потеря контекста</span>
+            </article>
+            <article class="journey-stop risk-integration" data-stop>
+              <strong>CRM</strong>
+              <span>статусы</span>
+            </article>
+            <article class="journey-stop risk-manual" data-stop>
+              <strong>Менеджер</strong>
+              <span>ручная квалификация</span>
+            </article>
+            <article class="journey-stop risk-integration" data-stop>
+              <strong>Бронь</strong>
+              <span>бронь и ссылка</span>
+            </article>
+            <article class="journey-stop risk-integration" data-stop>
+              <strong>Оплата</strong>
+              <span>карта / рассрочка</span>
+            </article>
+            <article class="journey-stop risk-manual" data-stop>
+              <strong>Вопросы / поддержка</strong>
+              <span>типовые вопросы</span>
+            </article>
+            <article class="journey-stop risk-neutral" data-stop>
+              <strong>Camp Entry</strong>
+              <span>сервисный опыт</span>
+            </article>
+            <article class="journey-stop risk-retention" data-stop>
+              <strong>Бонус / возврат</strong>
+              <span>минутки и повтор</span>
+            </article>
+          </div>
+
+          <div class="legend-row">
+            <span class="legend-item conversion">потери конверсии</span>
+            <span class="legend-item manual">ручная нагрузка</span>
+            <span class="legend-item integration">риск сбоя интеграции</span>
+            <span class="legend-item retention">рост удержания</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-frame cta-shell reveal">
+          <p class="eyebrow">Финальный шаг</p>
+          <h2>Готов обсудить, с какой зоны начать пилот.</h2>
+          <p>Самый быстрый вход: лиды, вопросы родителей, оплаты, мониторинг или повторные продажи.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="mailto:your@email.com">Связаться со мной</a>
+            <a class="button button-secondary" href="index.html">Вернуться к главной</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="pain-map.js"></script>
+</body>
+</html>
